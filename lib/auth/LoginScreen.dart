@@ -33,7 +33,7 @@ class LogInScreenState extends State<LogInScreen>{
               width: 200.0,
               height: 200.0,
             ),
-            buildTextField("Email"),
+            buildTextField("Mobile No."),
             SizedBox(height: 10.0,),
             buildTextField("Password"),
             Container(
@@ -120,7 +120,7 @@ class LogInScreenState extends State<LogInScreen>{
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
-        prefixIcon: hintText == "Email" ? Icon(Icons.email, color: Colors.green,) : Icon(Icons.lock, color: Colors.green),
+        prefixIcon: hintText == "Mobile No." ? Icon(Icons.phone_android, color: Colors.green,) : Icon(Icons.lock, color: Colors.green),
         suffixIcon: hintText == "Password" ? IconButton(
           onPressed: _toggleVisibility,
           icon: _isHidden ? Icon(Icons.visibility_off,color: Colors.green) : Icon(Icons.visibility, color: Colors.green),

@@ -1,103 +1,81 @@
 import 'package:flutter/material.dart';
-import 'package:home_kitchen/Constant/Constant.dart';
+import 'package:pin_view/pin_view.dart';
 
 class VerifyScreen extends StatefulWidget {
   @override
   VerifyScreenState createState() => VerifyScreenState();
 }
 
-class VerifyScreenState extends State<VerifyScreen> {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return new Scaffold(
+class VerifyScreenState extends State<VerifyScreen>{
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold (
       resizeToAvoidBottomPadding: false,
-      body: Container(
-        padding:
-            EdgeInsets.only(top: 150.0, right: 20.0, left: 20.0, bottom: 20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+      body: Container (
+        padding: EdgeInsets.only(top: 100.0, right: 20.0, left: 20.0, bottom: 20.0),
+        child: Column (
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Image(
-              image: new AssetImage("assets/logo.png"),
-              width: 150.0,
-              height: 125.0,
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            buildTextField("Email"),
-            SizedBox(
-              height: 10.0,
-            ),
-            buildButtonContainer(),
-            SizedBox(
-              height: 20.0,
-            ),
-            Container(
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+            Flexible (
+                child: Column (
                   children: <Widget>[
-                    Text("Don't have an account?"),
-                    SizedBox(
-                      width: 10.0,
+                    Container(margin: EdgeInsets.symmetric(vertical: 15.0)),
+                    Icon(Icons.phonelink_ring, size: 100.0, color: Theme.of(context).primaryColor),
+                    Container(margin: EdgeInsets.symmetric(vertical: 15.0)),
+                    Container (
+                      width: MediaQuery.of(context).size.width * 4/5,
+                      child: Text (
+                        "Waiting to automatically detect an SMS sent to your mobile number.",
+                        textAlign: TextAlign.center,
+                        style: TextStyle (
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.teal
+                        ),
+                      ),
                     ),
-                    Text("SIGN UP",
-                        style: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                        )),
+                    Container (
+                      padding: EdgeInsets.symmetric(horizontal: 15.0),
+                      child: PinView (
+                          count: 6, // count of the fields, excluding dashes
+                          autoFocusFirstField: false,
+                          dashPositions: [3], // describes the dash positions (not indexes)
+                          sms: SmsListener (
+                            // this class is used to receive, format and process an sms
+                              from: "6505551212",
+                              formatBody: (String body){
+                                // incoming message type
+                                // from: "6505551212"
+                                // body: "Your verification code is: 123-456"
+                                // with this function, we format body to only contain
+                                // the pin itself
+                                String codeRaw = body.split(": ")[1];
+                                List<String> code = codeRaw.split("-");
+                                return code.join();
+                              }
+                          ),
+                          submit: (String pin){
+                            showDialog (
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog (
+                                      title: Text("Pin received successfully."),
+                                      content: Text("Entered pin is: $pin")
+                                  );
+                                }
+                            );
+                          } // gets triggered when all the fields are filled
+                      ),
+                    ),
                   ],
-                ),
-              ),
-            ),
+                )
+            )
           ],
         ),
-      ),
-    );
-  }
+      )
+  );
+}
 
-  Widget buildTextField(String hintText) {
-    return TextField(
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: TextStyle(
-          color: Colors.grey,
-          fontSize: 16.0,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        prefixIcon: hintText == "Email" ? Icon(Icons.email) : Icon(Icons.lock),
-      ),
-    );
-  }
-
-  Widget buildButtonContainer() {
-    return GestureDetector(
-      onTap: () {
-        Navigator.of(context).pushNamed(HOME_SCREEN);
-      },
-      child: new Container(
-        height: 56.0,
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(23.0),
-          gradient: LinearGradient(
-              colors: [Color(0xFF1DBF73), Color(0xFF1DBF75)],
-              begin: Alignment.centerRight,
-              end: Alignment.centerLeft),
-        ),
-        child: Center(
-          child: Text(
-            "SUBMIT",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18.0,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 }

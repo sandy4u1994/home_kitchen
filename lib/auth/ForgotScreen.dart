@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:home_kitchen/Constant/Constant.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter/services.dart';
+
 
 class ForgotScreen extends StatefulWidget {
   @override
@@ -14,16 +17,23 @@ class ForgotScreenState extends State<ForgotScreen> {
       resizeToAvoidBottomPadding: false,
       body: Container(
         padding:
-            EdgeInsets.only(top: 150.0, right: 20.0, left: 20.0, bottom: 20.0),
+            EdgeInsets.only(top: 125.0, right: 20.0, left: 20.0, bottom: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Image(
               image: new AssetImage("assets/images/customer_logo.png"),
-              width: 150.0,
-              height: 150.0,
+              width: 175.0,
+              height: 175.0,
             ),
-            buildTextField("Email"),
+            Text("Enter Your Registered Mobile No.", style: TextStyle(
+                color: Colors.grey[600],
+                fontWeight: FontWeight.bold,
+                fontSize: 20)),
+            SizedBox(
+              height: 20.0,
+            ),
+            buildTextField("Mobile No."),
             SizedBox(
               height: 10.0,
             ),
@@ -40,10 +50,36 @@ class ForgotScreenState extends State<ForgotScreen> {
                     SizedBox(
                       width: 10.0,
                     ),
-                    Text("SIGN UP",
+                  GestureDetector(
+                  onTap: () {
+                  Navigator.of(context).pushNamed(SIGNUP_SCREEN);
+                   },
+                   child: new  Text("SIGN UP",
                         style: TextStyle(
                           color: Theme.of(context).primaryColor,
-                        )),
+                        )),),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 20.0,),
+            Container(
+              child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    IconButton(
+                      // Use the FontAwesomeIcons class for the IconData
+                        icon: new Icon(FontAwesomeIcons.facebookSquare, size: 40.0, color: Colors.indigoAccent,),
+                        onPressed: () { print("Pressed"); }
+                    ),
+                    SizedBox(width: 10.0,),
+
+                    IconButton(
+                      // Use the FontAwesomeIcons class for the IconData
+                        icon: new Icon(FontAwesomeIcons.googlePlusSquare, size: 40.0, color: Colors.red,),
+                        onPressed: () { print("Pressed"); }
+                    ),
                   ],
                 ),
               ),
@@ -66,7 +102,13 @@ class ForgotScreenState extends State<ForgotScreen> {
           borderRadius: BorderRadius.circular(20.0),
         ),
         prefixIcon: Icon(Icons.phone_android, color: Colors.green),
+
       ),
+      keyboardType: TextInputType.phone,
+        inputFormatters: [
+          LengthLimitingTextInputFormatter(10),
+        ]
+
     );
   }
 

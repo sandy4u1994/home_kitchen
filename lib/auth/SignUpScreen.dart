@@ -23,31 +23,34 @@ class SignUpState extends State<SignUpScreen>{
     return new Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Container(
-        padding: EdgeInsets.only(top: 100.0, right: 20.0, left: 20.0, bottom: 20.0),
+        padding: EdgeInsets.only(top: 35.0, right: 20.0, left: 20.0, bottom: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Image(
               image: new AssetImage("assets/images/customer_logo.png"),
               width: 150.0,
-              height: 125.0,
+              height: 150.0,
             ),
-            SizedBox(height: 10.0,),
-            buildTextField("Email"),
-            SizedBox(height: 10.0,),
+            buildTextField("Full Name"),
+            SizedBox(height: 8.0,),
+            buildTextField("Email ID"),
+            SizedBox(height: 8.0,),
+            buildTextField("Mobile No."),
+            SizedBox(height: 8.0,),
             buildTextField("Password"),
-            SizedBox(height: 10.0,),
+            SizedBox(height: 8.0,),
             buildTextField("Confirm Password"),
-            SizedBox(height: 10.0,),
+            SizedBox(height: 15.0,),
             buildButtonContainer(),
-            SizedBox(height: 10.0,),
+            SizedBox(height: 20.0,),
             Container(
               child: Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text("Already, have an account?"),
-                    SizedBox(width: 10.0,),
+                    SizedBox(width: 8.0,),
                 GestureDetector(
                   onTap: (){
                     Navigator
@@ -60,7 +63,7 @@ class SignUpState extends State<SignUpScreen>{
                 ),
               ),
             ),
-            SizedBox(height: 10.0,),
+            SizedBox(height: 20.0,),
             Container(
               child: Center(
                 child: Row(
@@ -72,13 +75,11 @@ class SignUpState extends State<SignUpScreen>{
                         onPressed: () { print("Pressed"); }
                     ),
                     SizedBox(width: 10.0,),
-
                     IconButton(
                       // Use the FontAwesomeIcons class for the IconData
                         icon: new Icon(FontAwesomeIcons.googlePlusSquare, size: 40.0, color: Colors.red,),
                         onPressed: () { print("Pressed"); }
                     ),
-
                   ],
                 ),
               ),
@@ -100,22 +101,32 @@ class SignUpState extends State<SignUpScreen>{
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
-        prefixIcon: hintText == "Email" ? Icon(Icons.email) : Icon(Icons.lock),
+        prefixIcon: hintText == "Full Name" ? Icon(Icons.account_circle, color: Colors.green,)
+            : hintText == "Email ID" ? Icon(Icons.email, color: Colors.green,)
+            : hintText == "Mobile No." ? Icon(Icons.phone_android, color: Colors.green,)
+            : hintText == "Password" ? Icon(Icons.lock, color: Colors.green,)
+            : hintText == "Confirm Password" ? Icon(Icons.lock, color: Colors.green,)
+            :Icon(Icons.refresh, color: Colors.green,),
+
         suffixIcon: hintText == "Password" ? IconButton(
           onPressed: _toggleVisibility,
-          icon: _isHidden ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
-        ) : null,
+          icon: _isHidden ? Icon(Icons.visibility_off, color: Colors.green,) : Icon(Icons.visibility, color: Colors.green,),
+        )
+        : hintText == "Confirm Password" ? IconButton(
+          onPressed: _toggleVisibility,
+          icon: _isHidden ? Icon(Icons.visibility_off, color: Colors.green,) : Icon(Icons.visibility, color: Colors.green,),
+        ): null,
       ),
-      obscureText: hintText == "Password" ? _isHidden : false,
+      obscureText: hintText == "Password" ? _isHidden : hintText == "Confirm Password" ? _isHidden : false,
     );
   }
 
   Widget buildButtonContainer(){
-    GestureDetector(
+    return GestureDetector(
         onTap: (){
       Navigator
           .of(context)
-          .pushNamed(VERIFY_SCREEN);
+          .pushNamed(HOME_SCREEN);
     },
     child: new Container(
       height: 56.0,
@@ -124,8 +135,8 @@ class SignUpState extends State<SignUpScreen>{
         borderRadius: BorderRadius.circular(23.0),
         gradient: LinearGradient(
             colors: [
-              Color(0xFFFB415B),
-              Color(0xFFEE5623)
+              Color(0xFF1DBF73),
+              Color(0xFF1DBF75)
             ],
             begin: Alignment.centerRight,
             end: Alignment.centerLeft
