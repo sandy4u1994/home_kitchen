@@ -21,9 +21,12 @@ import 'package:home_kitchen/account/Orders.dart';
 import 'package:home_kitchen/account/Preferences.dart';
 import 'package:home_kitchen/account/Profile.dart';
 import 'package:home_kitchen/account/Subscriptions.dart';
+import 'package:home_kitchen/bottom_navbar/bottom_appbar.dart';
+import 'package:home_kitchen/bottom_navbar/layout.dart';
+import 'package:home_kitchen/bottom_navbar/main_appbar.dart';
+import 'package:home_kitchen/bottom_navbar/navbar_icons.dart';
 
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 main() {
 
@@ -58,7 +61,11 @@ main() {
       FOOD_SCREEN: (BuildContext context) => new FoodScreen(),
       LOCATION_SCREEN: (BuildContext context) => new LocationScreen(),
       SEARCH_SCREEN: (BuildContext context) => new SearchScreen(),
-      SORT_SCREEN: (BuildContext context) => new SortScreen()
+      SORT_SCREEN: (BuildContext context) => new SortScreen(),
+      MAIN_APPBAR: (BuildContext context) => new MainAppBar(title: 'BottomAppBar with FAB'),
+      LAYOUT_APPBAR: (BuildContext context) => new AnchoredOverlay(),
+      ICON_APPBAR: (BuildContext context) => new FabWithIcons(),
+      BOTTOM_APPBAR: (BuildContext context) => new FABBottomAppBar()
     },
   ));
 }

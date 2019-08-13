@@ -18,5 +18,11 @@ LOGIN_SCREEN = '/LogInScreen',
     FOOD_SCREEN = '/FoodScreen',
     LOCATION_SCREEN = '/LocationScreen',
     SEARCH_SCREEN = '/SearchScreen',
-    SORT_SCREEN = '/SortScreen';
+    SORT_SCREEN = '/SortScreen',
+    MAIN_APPBAR = '/MainAppBar',
+    LAYOUT_APPBAR = '/LayoutAppBar',
+    ICON_APPBAR = '/IconAppBar',
+    BOTTOM_APPBAR = '/BottomAppBar';
+
+
 
