@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:home_kitchen/bottom_navbar/main_appbar.dart';
+import 'package:home_kitchen/appbar_gradient/AppBarGradient.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -7,14 +8,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
-  final String title = "Home";
-
+  final String title = "Home Kitchen";
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
         appBar: AppBar(title: Text(title),
           backgroundColor: Colors.green),
-        body: Center(child: Text('My Page!')),
+        body: Center(child: BottomAppBarMain()),
         drawer:Drawer(
           elevation: 20.0,
           // Add a ListView to the drawer. This ensures the user can scroll
@@ -47,28 +47,8 @@ class HomeScreenState extends State<HomeScreen> {
                     )),
               ),
              ListTile(
-                leading: Icon(Icons.add_shopping_cart),
-                title: Text('My Orders'),
-                onTap: () {
-                  // This line code will close drawer programatically....
-                  Navigator.pop(context);
-                },
-              ),
-              Divider(
-                height: 2.0,
-              ), ListTile(
-                leading: Icon(Icons.subscriptions),
-                title: Text('My Subscriptions'),
-                onTap: () {
-                  // This line code will close drawer programatically....
-                  Navigator.pop(context);
-                },
-              ),
-              Divider(
-                height: 2.0,
-              ), ListTile(
-                leading: Icon(Icons.fastfood),
-                title: Text('Be a Cook'),
+                leading: Icon(Icons.account_circle),
+                title: Text('My Profile'),
                 onTap: () {
                   // This line code will close drawer programatically....
                   Navigator.pop(context);
@@ -87,23 +67,14 @@ class HomeScreenState extends State<HomeScreen> {
               Divider(
                 height: 2.0,
               ), ListTile(
-                leading: Icon(Icons.question_answer),
-                title: Text('FAQs'),
+                leading: Icon(Icons.fastfood),
+                title: Text('Be a Cook'),
                 onTap: () {
                   // This line code will close drawer programatically....
                   Navigator.pop(context);
                 },
               ),
-              Divider(
-                height: 2.0,
-              ), ListTile(
-                leading: Icon(Icons.feedback),
-                title: Text('Feedback'),
-                onTap: () {
-                  // This line code will close drawer programatically....
-                  Navigator.pop(context);
-                },
-              ),
+
               Divider(
                 height: 2.0,
               ),
@@ -115,6 +86,7 @@ class HomeScreenState extends State<HomeScreen> {
                   Navigator.pop(context);
                 },
               ),
+
               Divider(
                 height: 2.0,
               ),
@@ -125,6 +97,18 @@ class HomeScreenState extends State<HomeScreen> {
                   Navigator.pop(context);
                 },
               ),
+
+              Divider(
+                height: 2.0,
+              ), ListTile(
+                leading: Icon(Icons.question_answer),
+                title: Text('FAQs'),
+                onTap: () {
+                  // This line code will close drawer programatically....
+                  Navigator.pop(context);
+                },
+              ),
+
               Divider(
                 height: 2.0,
               ),
@@ -134,13 +118,23 @@ class HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   Navigator.pop(context);
                 },
-              )
+              ),
+              Divider(
+              height: 2.0,
+            ),
+            ListTile(
+            leading: Icon(Icons.exit_to_app),
+            title: Text('Logout'),
+            onTap: () {
+            Navigator.pop(context);
+            },
+            )
 
             ],
           ),
-        )
-
+        ),
     );
 
   }
+
 }

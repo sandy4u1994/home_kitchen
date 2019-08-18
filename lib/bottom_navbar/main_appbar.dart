@@ -4,17 +4,17 @@ import 'package:home_kitchen/bottom_navbar/layout.dart';
 import 'package:flutter/material.dart';
 
 
-class MainAppBar extends StatefulWidget {
+class BottomAppBarMain extends StatefulWidget {
 
-  MainAppBar({Key key, this.title}) : super(key: key);
+  BottomAppBarMain({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MainAppBarState createState() => new _MainAppBarState();
+  _BottomAppBarMainState createState() => new _BottomAppBarMainState();
 }
 
-class _MainAppBarState extends State<MainAppBar> with TickerProviderStateMixin {
+class _BottomAppBarMainState extends State<BottomAppBarMain> with TickerProviderStateMixin {
   String _lastSelected = 'TAB: 0';
 
   void _selectedTab(int index) {

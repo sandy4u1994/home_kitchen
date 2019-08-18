@@ -8,7 +8,6 @@ import 'package:home_kitchen/auth/SignUpScreen.dart';
 import 'package:home_kitchen/auth/ForgotScreen.dart';
 import 'package:home_kitchen/auth/VerifyScreen.dart';
 import 'package:home_kitchen/UI/Sort.dart';
-import 'package:home_kitchen/UI/Search.dart';
 import 'package:home_kitchen/UI/Chef.dart';
 import 'package:home_kitchen/UI/Food.dart';
 import 'package:home_kitchen/UI/Location.dart';
@@ -25,6 +24,10 @@ import 'package:home_kitchen/bottom_navbar/bottom_appbar.dart';
 import 'package:home_kitchen/bottom_navbar/layout.dart';
 import 'package:home_kitchen/bottom_navbar/main_appbar.dart';
 import 'package:home_kitchen/bottom_navbar/navbar_icons.dart';
+import 'package:home_kitchen/appbar_gradient/Message.dart';
+import 'package:home_kitchen/appbar_gradient/Notification.dart';
+import 'package:home_kitchen/appbar_gradient/Search.dart';
+import 'package:home_kitchen/appbar_gradient/AppBarGradient.dart';
 
 import 'package:flutter/material.dart';
 
@@ -60,12 +63,16 @@ main() {
       CHEF_SCREEN: (BuildContext context) => new ChefScreen(),
       FOOD_SCREEN: (BuildContext context) => new FoodScreen(),
       LOCATION_SCREEN: (BuildContext context) => new LocationScreen(),
-      SEARCH_SCREEN: (BuildContext context) => new SearchScreen(),
       SORT_SCREEN: (BuildContext context) => new SortScreen(),
-      MAIN_APPBAR: (BuildContext context) => new MainAppBar(title: 'BottomAppBar with FAB'),
+      BOTTOM_APPBAR_MAIN: (BuildContext context) => new BottomAppBarMain(title: 'BottomAppBar with FAB'),
       LAYOUT_APPBAR: (BuildContext context) => new AnchoredOverlay(),
       ICON_APPBAR: (BuildContext context) => new FabWithIcons(),
-      BOTTOM_APPBAR: (BuildContext context) => new FABBottomAppBar()
+      BOTTOM_APPBAR: (BuildContext context) => new FABBottomAppBar(),
+      SEARCH_APPBAR: (BuildContext context) => new SearchScreen(),
+      NOTIFICATION_APPBAR: (BuildContext context) => new NotificationScreen(),
+      MESSAGE_APPBAR: (BuildContext context) => new MessageScreen(),
+      MAIN_APPBAR: (BuildContext context) => new AppbarGradient(),
+
     },
   ));
 }

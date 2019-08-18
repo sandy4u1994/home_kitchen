@@ -17,12 +17,13 @@ LOGIN_SCREEN = '/LogInScreen',
     CHEF_SCREEN = '/ChefScreen',
     FOOD_SCREEN = '/FoodScreen',
     LOCATION_SCREEN = '/LocationScreen',
-    SEARCH_SCREEN = '/SearchScreen',
     SORT_SCREEN = '/SortScreen',
-    MAIN_APPBAR = '/MainAppBar',
+    BOTTOM_APPBAR_MAIN = '/BottomAppBarMain',
     LAYOUT_APPBAR = '/LayoutAppBar',
     ICON_APPBAR = '/IconAppBar',
-    BOTTOM_APPBAR = '/BottomAppBar';
-
-
+    BOTTOM_APPBAR = '/BottomAppBar',
+    SEARCH_APPBAR = '/SearchAppBar',
+    MESSAGE_APPBAR = '/MessageAppBar',
+    NOTIFICATION_APPBAR = '/NotificationAppBar',
+    MAIN_APPBAR = '/MainAppBar';
 
