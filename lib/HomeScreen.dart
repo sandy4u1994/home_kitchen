@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:home_kitchen/Constant/Constant.dart';
 import 'package:home_kitchen/bottom_navbar/main_appbar.dart';
-import 'package:home_kitchen/appbar_gradient/AppBarGradient.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -49,19 +49,21 @@ class HomeScreenState extends State<HomeScreen> {
              ListTile(
                 leading: Icon(Icons.account_circle),
                 title: Text('My Profile'),
-                onTap: () {
-                  // This line code will close drawer programatically....
-                  Navigator.pop(context);
-                },
+               onTap: (){
+                 Navigator
+                     .of(context)
+                     .pushNamed(PROFILE_SCREEN);
+               },
               ),
               Divider(
                 height: 2.0,
               ), ListTile(
                 leading: Icon(Icons.stars),
                 title: Text('My Preferences'),
-                onTap: () {
-                  // This line code will close drawer programatically....
-                  Navigator.pop(context);
+                onTap: (){
+                  Navigator
+                      .of(context)
+                      .pushNamed(PREFERENCE_SCREEN);
                 },
               ),
               Divider(
@@ -69,9 +71,10 @@ class HomeScreenState extends State<HomeScreen> {
               ), ListTile(
                 leading: Icon(Icons.fastfood),
                 title: Text('Be a Cook'),
-                onTap: () {
-                  // This line code will close drawer programatically....
-                  Navigator.pop(context);
+                onTap: (){
+                  Navigator
+                      .of(context)
+                      .pushNamed(CHEF_SCREEN);
                 },
               ),
 
@@ -81,9 +84,10 @@ class HomeScreenState extends State<HomeScreen> {
               ListTile(
                 leading: Icon(Icons.person_outline),
                 title: Text('About Us'),
-                onTap: () {
-                  // This line code will close drawer programatically....
-                  Navigator.pop(context);
+                onTap: (){
+                  Navigator
+                      .of(context)
+                      .pushNamed(ABOUT_SCREEN);
                 },
               ),
 
@@ -93,8 +97,10 @@ class HomeScreenState extends State<HomeScreen> {
               ListTile(
                 leading: Icon(Icons.contact_phone),
                 title: Text('Contact Us'),
-                onTap: () {
-                  Navigator.pop(context);
+                onTap: (){
+                  Navigator
+                      .of(context)
+                      .pushNamed(CONTACT_SCREEN);
                 },
               ),
 
@@ -103,9 +109,10 @@ class HomeScreenState extends State<HomeScreen> {
               ), ListTile(
                 leading: Icon(Icons.question_answer),
                 title: Text('FAQs'),
-                onTap: () {
-                  // This line code will close drawer programatically....
-                  Navigator.pop(context);
+                onTap: (){
+                  Navigator
+                      .of(context)
+                      .pushNamed(FAQ_SCREEN);
                 },
               ),
 
@@ -115,8 +122,10 @@ class HomeScreenState extends State<HomeScreen> {
               ListTile(
                 leading: Icon(Icons.insert_drive_file),
                 title: Text('Terms of Services'),
-                onTap: () {
-                  Navigator.pop(context);
+                onTap: (){
+                  Navigator
+                      .of(context)
+                      .pushNamed(ABOUT_SCREEN);
                 },
               ),
               Divider(
@@ -125,9 +134,11 @@ class HomeScreenState extends State<HomeScreen> {
             ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Logout'),
-            onTap: () {
-            Navigator.pop(context);
-            },
+              onTap: (){
+                Navigator
+                    .of(context)
+                    .pushNamed(LOGIN_SCREEN);
+              },
             )
 
             ],
