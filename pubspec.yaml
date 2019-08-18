@@ -57,6 +57,33 @@ flutter:
   assets:
     - assets/images/customer.png
     - assets/images/customer_logo.png
+    - assets/images/headerProfile.png
+    - assets/icon/truck.png
+    - assets/icon/chat.png
+    - assets/icon/notification.png
+    - assets/icon/callcenter.png
+    - assets/icon/setting.png
+    - assets/icon/aboutapp.png
+    - assets/icon/shopping-cart.png
+    - assets/icon/message.png
+    - assets/icon/book.png
+    - assets/icon/camera.png
+    - assets/icon/fashion.png
+    - assets/icon/food.png
+    - assets/icon/game.png
+    - assets/icon/handphone.png
+    - assets/icon/health.png
+    - assets/icon/mesin.png
+    - assets/icon/otomotif.png
+    - assets/icon/pc.png
+    - assets/icon/sport.png
+    - assets/icon/ticket.png
+    - assets/icon/girlcallcenter.png
+    - assets/icon/creditAcount.png
+    - assets/icon/flashSaleIcon.png
+
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
