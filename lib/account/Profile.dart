@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_kitchen/Constant/Constant.dart';
 
 
 class ProfileScreen extends StatefulWidget {
@@ -102,8 +103,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: 35.0,
                     image: "assets/icon/notification.png",
                     tap: () {
-                      Navigator.of(context).push(PageRouteBuilder(
-                          pageBuilder: (_, __, ___) => new notification()));
+                      Navigator.of(context).pushNamed(NOTIFICATION_SCREEN);
                     },
                   ),
                   Padding(

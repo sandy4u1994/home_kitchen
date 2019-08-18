@@ -72,7 +72,7 @@ main() {
       NOTIFICATION_APPBAR: (BuildContext context) => new NotificationScreen(),
       MESSAGE_APPBAR: (BuildContext context) => new MessageScreen(),
       MAIN_APPBAR: (BuildContext context) => new AppbarGradient(),
-
+      NOTIFICATION_SCREEN: (BuildContext context) => new NotificationScreen(),
     },
   ));
 }

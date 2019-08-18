@@ -1,4 +1,4 @@
-String
+const String
 LOGIN_SCREEN = '/LogInScreen',
     SIGNUP_SCREEN = '/SignUpScreen',
     ANIMATED_SPLASH = '/SplashScreen',
@@ -25,5 +25,7 @@ LOGIN_SCREEN = '/LogInScreen',
     SEARCH_APPBAR = '/SearchAppBar',
     MESSAGE_APPBAR = '/MessageAppBar',
     NOTIFICATION_APPBAR = '/NotificationAppBar',
+    NOTIFICATION_SCREEN = '/NotificationScreen',
     MAIN_APPBAR = '/MainAppBar';
+
 
