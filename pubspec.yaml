@@ -81,6 +81,16 @@ flutter:
     - assets/icon/girlcallcenter.png
     - assets/icon/creditAcount.png
     - assets/icon/flashSaleIcon.png
+    - assets/images/notmessage.png
+    - assets/images/notifications-button.png
+    - assets/images/noNotification.png
+    - assets/images/bag.png
+    - assets/images/courier.png
+    - assets/images/payment.png
+    - assets/images/order.png
+    - assets/images/house.png
+    - assets/images/IlustrasiMessage.png
+
 
 
 

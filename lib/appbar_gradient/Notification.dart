@@ -14,25 +14,25 @@ class NotificationScreenState extends State<NotificationScreen> {
     super.initState();
     setState(() {
       items.add(  Post(
-          image:"assets/img/Logo.png",
+          image:"assets/images/customer_logo.png",
           id: 1,
-          title:"Treva Shop",
-          desc: "Thanks for downloaded treva shop application"),);
+          title:"Home Kitchen",
+          desc: "Thanks for downloaded Home Kitchen application"),);
       items.add( Post(
-          image:"assets/img/Logo.png",
+          image:"assets/images/customer_logo.png",
           id: 2,
-          title:"Treva Shop",
+          title:"Home Kitchen",
           desc: "Your Item Delivery"),);
       items.add( Post(
-          image:"assets/img/Logo.png",
+          image:"assets/images/customer_logo.png",
           id: 3,
-          title:"Treva Shop",
-          desc: "Pending List Item Shoes"),);
+          title:"Home Kitchen",
+          desc: "Pending List Item Cake"),);
       items.add( Post(
-          image:"assets/img/Logo.png",
+          image:"assets/images/customer_logo.png",
           id: 4,
-          title:"Treva Shop",
-          desc: "Get 10% Discount for macbook pro 2018"),);
+          title:"Home Kitchen",
+          desc: "Get 10% Discount for 1st Order"),);
     });
   }
 
@@ -50,7 +50,7 @@ class NotificationScreenState extends State<NotificationScreen> {
                 fontFamily: "Gotik"),
           ),
           iconTheme: IconThemeData(
-            color: const Color(0xFF6991C7),
+            color: const Color(0xFF1DBF73),
           ),
           centerTitle: true,
           elevation: 0.0,
@@ -69,7 +69,7 @@ class NotificationScreenState extends State<NotificationScreen> {
                     });
                   },
                   background: Container(
-                    color: Color(0xFF6991C7),
+                    color: Color(0xFF1DBF73),
                   ),
                   child: Container(
                     height: 88.0,
@@ -142,7 +142,7 @@ class noItemNotifications extends StatelessWidget {
                 padding:
                 EdgeInsets.only(top: mediaQueryData.padding.top + 100.0)),
             Image.asset(
-              "assets/img/noNotification.png",
+              "assets/images/noNotification.png",
               height: 200.0,
             ),
             Padding(padding: EdgeInsets.only(bottom: 30.0)),

@@ -27,19 +27,22 @@ class AboutScreenState extends State<AboutScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           "About Us",
           style: TextStyle(
               fontWeight: FontWeight.w700,
-              fontSize: 15.0,
-              color: Colors.white,
+              fontSize: 18.0,
+              color: Colors.black54,
               fontFamily: "Gotik"),
         ),
-        backgroundColor: Colors.green,
+        iconTheme: IconThemeData(
+          color: const Color(0xFF1DBF73),
+        ),
         centerTitle: true,
-        iconTheme: IconThemeData(color: Color(0xFFFFFFFF)),
         elevation: 0.0,
+        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Container(

@@ -12,8 +12,23 @@ class HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(title),
-          backgroundColor: Colors.green),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: Text(
+          "Home Kitchen",
+          style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 18.0,
+              color: Colors.black54,
+              fontFamily: "Gotik"),
+        ),
+        iconTheme: IconThemeData(
+          color: const Color(0xFF1DBF73),
+        ),
+        centerTitle: true,
+        elevation: 0.0,
+        backgroundColor: Colors.white,
+      ),
         body: Center(child: BottomAppBarMain()),
         drawer:Drawer(
           elevation: 20.0,
@@ -125,7 +140,7 @@ class HomeScreenState extends State<HomeScreen> {
                 onTap: (){
                   Navigator
                       .of(context)
-                      .pushNamed(ABOUT_SCREEN);
+                      .pushNamed(TERMS_SCREEN);
                 },
               ),
               Divider(

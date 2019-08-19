@@ -9,7 +9,7 @@ class ProfileScreen extends StatefulWidget {
 
 /// Custom Font
 var _txt = TextStyle(
-  color: Colors.black,
+  color: Colors.black54,
   fontFamily: "Sans",
 );
 
@@ -26,12 +26,15 @@ var _txtCategory = _txt.copyWith(
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
+
+
+
     /// Declare MediaQueryData
     MediaQueryData mediaQueryData = MediaQuery.of(context);
 
     /// To Sett PhotoProfile,Name and Edit Profile
     var _profile = Padding(
-      padding:  EdgeInsets.only(top: 185.0, ),
+      padding: EdgeInsets.only(top: 100.0,),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -49,22 +52,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     border: Border.all(color: Colors.white, width: 2.5),
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                        image: AssetImage("assets/img/womanface.jpg"))),
+                        image: NetworkImage("https://avatars2.githubusercontent.com/u/40665342?s=460&v=4"))),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 5.0),
                 child: Text(
-                  "Alisa Heart",
+                  "Sandeep Rawat",
                   style: _txtName,
                 ),
               ),
-              InkWell(
-                onTap: null,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 0.0),
-                  child: Text(
-                    "Edit Profile",
-                    style: _txtEdit,
+              Material(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed(EDIT_PROFILE);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 0.0),
+                    child: Text(
+                      "Edit Profile",
+                      style: _txtEdit,
+                    ),
                   ),
                 ),
               ),
@@ -77,26 +84,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
 
-    return SingleChildScrollView(
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "My Profile",
+            style: TextStyle(
+              fontFamily: "Gotik", fontSize: 18.0, color: Colors.black54),
+          ),
+          backgroundColor: Colors.transparent,
+          centerTitle: true,
+          iconTheme: IconThemeData(color: Color(0xFF1DBF73)),
+          elevation: 0.0,
+        ),
+
+    body: SingleChildScrollView(
       child: Container(
         color: Colors.white,
         child: Stack(
           children: <Widget>[
             /// Setting Header Banner
             Container(
-              height: 240.0,
+              height: 150.0,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("assets/img/headerProfile.png"),
+                      image: AssetImage("assets/images/headerProfile.png"),
                       fit: BoxFit.cover)),
             ),
+
             /// Calling _profile variable
             _profile,
             Padding(
-              padding: const EdgeInsets.only(top: 360.0),
+              padding: const EdgeInsets.only(top: 275.0),
               child: Column(
                 /// Setting Category List
                 children: <Widget>[
+
                   /// Call category class
                   category(
                     txt: "Notification",
@@ -108,25 +130,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 20.0, left: 85.0, right: 30.0),
-                    child: Divider(
-                      color: Colors.black12,
-                      height: 2.0,
-                    ),
-                  ),
-                  category(
-                    txt: "Payments",
-                    padding: 35.0,
-                    image: "assets/icon/creditAcount.png",
-                    tap: () {
-                      Navigator.of(context).push(PageRouteBuilder(
-                          pageBuilder: (_, __, ___) =>
-                          new creditCardSetting()));
-                    },
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 20.0, left: 85.0, right: 30.0),
+                        top: 10.0, left: 85.0, right: 30.0),
                     child: Divider(
                       color: Colors.black12,
                       height: 2.0,
@@ -137,13 +141,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: 26.0,
                     image: "assets/icon/chat.png",
                     tap: () {
-                      Navigator.of(context).push(PageRouteBuilder(
-                          pageBuilder: (_, __, ___) => new chat()));
+                      Navigator.of(context).pushNamed(MESSAGE_APPBAR);
                     },
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 20.0, left: 85.0, right: 30.0),
+                        top: 10.0, left: 85.0, right: 30.0),
                     child: Divider(
                       color: Colors.black12,
                       height: 2.0,
@@ -154,13 +157,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: 23.0,
                     image: "assets/icon/truck.png",
                     tap: () {
-                      Navigator.of(context).push(PageRouteBuilder(
-                          pageBuilder: (_, __, ___) => new order()));
+                      Navigator.of(context).pushNamed(ORDER_SCREEN);
                     },
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 20.0, left: 85.0, right: 30.0),
+                        top: 10.0, left: 85.0, right: 30.0),
                     child: Divider(
                       color: Colors.black12,
                       height: 2.0,
@@ -171,30 +173,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: 30.0,
                     image: "assets/icon/setting.png",
                     tap: () {
-                      Navigator.of(context).push(PageRouteBuilder(
-                          pageBuilder: (_, __, ___) => new settingAcount()));
+                      Navigator.of(context).pushNamed(SETTING_SCREEN);
                     },
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 20.0, left: 85.0, right: 30.0),
+                        top: 10.0, left: 85.0, right: 30.0),
                     child: Divider(
                       color: Colors.black12,
                       height: 2.0,
                     ),
                   ),
                   category(
-                    txt: "Call Center",
+                    txt: "Support Center",
                     padding: 30.0,
                     image: "assets/icon/callcenter.png",
                     tap: () {
-                      Navigator.of(context).push(PageRouteBuilder(
-                          pageBuilder: (_, __, ___) => new callCenter()));
+                      Navigator.of(context).pushNamed(SUPPORT_CENTER);
                     },
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 20.0, left: 85.0, right: 30.0),
+                        top: 10.0, left: 85.0, right: 30.0),
                     child: Divider(
                       color: Colors.black12,
                       height: 2.0,
@@ -205,8 +205,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     txt: "About Apps",
                     image: "assets/icon/aboutapp.png",
                     tap: () {
-                      Navigator.of(context).push(PageRouteBuilder(
-                          pageBuilder: (_, __, ___) => new aboutApps()));
+                      Navigator.of(context).pushNamed(ABOUT_SCREEN);
                     },
                   ),
                   Padding(padding: EdgeInsets.only(bottom: 20.0)),
@@ -216,12 +215,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ],
         ),
       ),
+    ),
     );
   }
-}
 
-/// Component category class to set list
+}
+  /// Component category class to set list
+
 class category extends StatelessWidget {
+
   @override
   String txt, image;
   GestureTapCallback tap;
@@ -230,12 +232,13 @@ class category extends StatelessWidget {
   category({this.txt, this.image, this.tap, this.padding});
 
   Widget build(BuildContext context) {
-    return InkWell(
+    return Material(
+        child: InkWell(
       onTap: tap,
       child: Column(
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(top: 15.0, left: 30.0),
+            padding: const EdgeInsets.only(top: 10.0, left: 30.0, right: 0.0, bottom: 10.0),
             child: Row(
               children: <Widget>[
                 Padding(
@@ -254,6 +257,7 @@ class category extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }

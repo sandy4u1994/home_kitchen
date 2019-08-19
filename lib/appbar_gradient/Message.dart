@@ -22,7 +22,7 @@ class MessageScreenState extends State<MessageScreen> {
               fontFamily: "Berlin"),
         ),
         iconTheme: IconThemeData(
-          color: const Color(0xFF6991C7),
+          color: const Color(0xFF1DBF73),
         ),
         centerTitle: true,
         elevation: 0.0,
@@ -34,9 +34,10 @@ class MessageScreenState extends State<MessageScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            Divider(height: 5.0),
             Padding(padding: EdgeInsets.only(top: 150.0)),
             Image.asset(
-              "assets/img/notmessage.png",
+              "assets/images/notmessage.png",
               height: 200.0,
             ),
             Padding(padding: EdgeInsets.only(bottom: 20.0)),

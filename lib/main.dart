@@ -28,6 +28,11 @@ import 'package:home_kitchen/appbar_gradient/Message.dart';
 import 'package:home_kitchen/appbar_gradient/Notification.dart';
 import 'package:home_kitchen/appbar_gradient/Search.dart';
 import 'package:home_kitchen/appbar_gradient/AppBarGradient.dart';
+import 'package:home_kitchen/account/EditProfile.dart';
+import 'package:home_kitchen/account/SettingScreen.dart';
+import 'package:home_kitchen/account/SupportCenter.dart';
+import 'package:home_kitchen/account/ChatItem.dart';
+import 'package:home_kitchen/pages/TermsService.dart';
 
 import 'package:flutter/material.dart';
 
@@ -37,8 +42,7 @@ main() {
     title: 'FluterLogindemo',
     debugShowCheckedModeBanner: false,
     theme: new ThemeData(
-        accentColor: Colors.black
-        ,
+        accentColor: Colors.black,
         primaryColor: Colors.black,
         primaryColorDark: Colors.black
 
@@ -73,6 +77,14 @@ main() {
       MESSAGE_APPBAR: (BuildContext context) => new MessageScreen(),
       MAIN_APPBAR: (BuildContext context) => new AppbarGradient(),
       NOTIFICATION_SCREEN: (BuildContext context) => new NotificationScreen(),
+      EDIT_PROFILE: (BuildContext context) => new EditProfile(),
+      SETTING_SCREEN: (BuildContext context) => new SettingScreen(),
+      SUPPORT_CENTER: (BuildContext context) => new SupportScreen(),
+      CHAT_ITEM: (BuildContext context) => new chatItem(),
+      TERMS_SCREEN: (BuildContext context) => new TermsService(),
+
+
+
     },
   ));
 }

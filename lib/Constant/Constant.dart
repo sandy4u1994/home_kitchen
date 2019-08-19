@@ -26,6 +26,9 @@ LOGIN_SCREEN = '/LogInScreen',
     MESSAGE_APPBAR = '/MessageAppBar',
     NOTIFICATION_APPBAR = '/NotificationAppBar',
     NOTIFICATION_SCREEN = '/NotificationScreen',
-    MAIN_APPBAR = '/MainAppBar';
-
-
+    MAIN_APPBAR = '/MainAppBar',
+    EDIT_PROFILE = '/MainAppBar',
+    SETTING_SCREEN = '/SettingScreen',
+    SUPPORT_CENTER = '/SupportScreen',
+    CHAT_ITEM = '/ChatItem',
+    TERMS_SCREEN = '/TermsService';
