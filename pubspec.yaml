@@ -34,6 +34,9 @@ dev_dependencies:
   pin_entry_text_field : ^0.1.3
   pin_view: ^1.0.1
   cupertino_icons: ^0.1.2
+  flutter_auth_buttons: ^0.5.0
+  flutter_swiper: ^1.1.6
+  google_maps_flutter: ^0.5.20+2
 
 
   # For information on the generic Dart part of this file, see the
@@ -90,10 +93,30 @@ flutter:
     - assets/images/order.png
     - assets/images/house.png
     - assets/images/IlustrasiMessage.png
-
-
-
-
+    - assets/img/food1.jpg
+    - assets/img/food2.jpg
+    - assets/img/food3.jpg
+    - assets/img/food4.jpg
+    - assets/img/food5.jpg
+    - assets/img/food0.jpg
+    - assets/img/user1.jpg
+    - assets/img/user2.jpg
+    - assets/img/user3.jpg
+    - assets/img/user0.jpg
+    - assets/img/visa.png
+    - assets/img/paypal.png
+    - assets/img/apple_pay.png
+    - assets/img/brazil.png
+    - assets/img/canada.png
+    - assets/img/china.png
+    - assets/img/france.png
+    - assets/img/germany.png
+    - assets/img/italy.png
+    - assets/img/netherlands.png
+    - assets/img/spain.png
+    - assets/img/united-arab-emirates.png
+    - assets/img/united-states-of-america.png
+    - assets/img/marker.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -106,17 +129,27 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Poppins-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins-Black.ttf
+          weight: 900
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

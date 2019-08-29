@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:home_kitchen/Constant/Constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +20,7 @@ class SplashScreenState extends State<SplashScreen>
   }
 
   void navigationPage() {
-    Navigator.of(context).pushReplacementNamed(LOGIN_SCREEN);
+    Navigator.of(context).pushReplacementNamed('/Login');
   }
 
   @override

@@ -52,11 +52,11 @@ class ForgotScreenState extends State<ForgotScreen> {
                     ),
                   GestureDetector(
                   onTap: () {
-                  Navigator.of(context).pushNamed(SIGNUP_SCREEN);
+                  Navigator.of(context).pushNamed('/SignUp');
                    },
                    child: new  Text("SIGN UP",
                         style: TextStyle(
-                          color: Theme.of(context).primaryColor,
+                          color: Colors.green,
                         )),),
                   ],
                 ),
@@ -115,7 +115,7 @@ class ForgotScreenState extends State<ForgotScreen> {
   Widget buildButtonContainer() {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(VERIFY_SCREEN);
+        Navigator.of(context).pushNamed('Verify');
       },
       child: new Container(
         height: 56.0,

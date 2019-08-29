@@ -1,4 +1,3 @@
-import 'package:home_kitchen/Constant/Constant.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -46,12 +45,12 @@ class LogInScreenState extends State<LogInScreen>{
                 onTap: (){
                   Navigator
                       .of(context)
-                      .pushNamed(FORGOT_SCREEN);
+                      .pushNamed('/Forgot');
                 },
                 child: new Text(
                     "Forgotten Password?",
                     style: TextStyle(
-                      color: Theme.of(context).primaryColor,
+                      color: Colors.green,
                     ),
                   ),
               ),
@@ -72,9 +71,9 @@ class LogInScreenState extends State<LogInScreen>{
                   onTap: (){
                     Navigator
                         .of(context)
-                        .pushNamed(SIGNUP_SCREEN);
+                        .pushNamed('/SignUp');
                   },
-                    child: new Text("SIGN UP", style: TextStyle(color: Theme.of(context).primaryColor,)),
+                    child: new Text("SIGN UP", style: TextStyle(color: Colors.green,)),
                 ),
                   ],
                 ),
@@ -134,7 +133,7 @@ class LogInScreenState extends State<LogInScreen>{
         onTap: (){
       Navigator
           .of(context)
-          .pushNamed(HOME_SCREEN);
+          .pushNamed('/Home');
       },
       child: new Container(
       height: 56.0,

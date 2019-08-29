@@ -31,4 +31,5 @@ LOGIN_SCREEN = '/LogInScreen',
     SETTING_SCREEN = '/SettingScreen',
     SUPPORT_CENTER = '/SupportScreen',
     CHAT_ITEM = '/ChatItem',
-    TERMS_SCREEN = '/TermsService';
+    TERMS_SCREEN = '/TermsService',
+    CARDS_CAROUSEL = '/CardCarousel';

@@ -1,4 +1,3 @@
-import 'package:home_kitchen/Constant/Constant.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -23,21 +22,21 @@ class SignUpState extends State<SignUpScreen>{
     return new Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Container(
-        padding: EdgeInsets.only(top: 35.0, right: 20.0, left: 20.0, bottom: 20.0),
+        padding: EdgeInsets.only(top: 50.0, right: 20.0, left: 20.0, bottom: 10.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Image(
               image: new AssetImage("assets/images/customer_logo.png"),
-              width: 150.0,
-              height: 150.0,
+              width: 175.0,
+              height: 175.0,
             ),
             buildTextField("Full Name"),
             SizedBox(height: 8.0,),
             buildTextField("Email ID"),
             SizedBox(height: 8.0,),
-            buildTextField("Mobile No."),
-            SizedBox(height: 8.0,),
+        //    buildTextField("Mobile No."),
+        //    SizedBox(height: 8.0,),
             buildTextField("Password"),
             SizedBox(height: 8.0,),
             buildTextField("Confirm Password"),
@@ -55,9 +54,9 @@ class SignUpState extends State<SignUpScreen>{
                   onTap: (){
                     Navigator
                         .of(context)
-                        .pushNamed(LOGIN_SCREEN);
+                        .pushNamed('/Login');
                   },
-                  child: new Text("LOGIN", style: TextStyle(color: Theme.of(context).primaryColor,)),
+                  child: new Text("LOGIN", style: TextStyle(color: Colors.green,)),
                 ),
                   ],
                 ),
@@ -103,7 +102,7 @@ class SignUpState extends State<SignUpScreen>{
         ),
         prefixIcon: hintText == "Full Name" ? Icon(Icons.account_circle, color: Colors.green,)
             : hintText == "Email ID" ? Icon(Icons.email, color: Colors.green,)
-            : hintText == "Mobile No." ? Icon(Icons.phone_android, color: Colors.green,)
+           // : hintText == "Mobile No." ? Icon(Icons.phone_android, color: Colors.green,)
             : hintText == "Password" ? Icon(Icons.lock, color: Colors.green,)
             : hintText == "Confirm Password" ? Icon(Icons.lock, color: Colors.green,)
             :Icon(Icons.refresh, color: Colors.green,),
@@ -126,7 +125,7 @@ class SignUpState extends State<SignUpScreen>{
         onTap: (){
       Navigator
           .of(context)
-          .pushNamed(HOME_SCREEN);
+          .pushNamed('/Home');
     },
     child: new Container(
       height: 56.0,
