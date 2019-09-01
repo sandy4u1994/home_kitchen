@@ -133,7 +133,7 @@ class LogInScreenState extends State<LogInScreen>{
         onTap: (){
       Navigator
           .of(context)
-          .pushNamed('/Home');
+          .pushNamed('/Pages', arguments: 2);
       },
       child: new Container(
       height: 56.0,
