@@ -19,7 +19,7 @@ class NotificationList {
           'assets/img/food4.jpg', 'Contrary to popular belief, Lorem Ipsum is not simply random text', '52min ago'),
       new Notification(
           'assets/img/food5.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry', '10min ago'),
-      new Notification('img/user0.jpg', 'It is a long established fact that a reader will be distracted', '12min ago'),
+      new Notification('assets/img/user0.jpg', 'It is a long established fact that a reader will be distracted', '12min ago'),
       new Notification(
           'assets/img/food2.jpg', 'There are many variations of passages of Lorem Ipsum available', '2 hours ago'),
       new Notification(

@@ -17,6 +17,12 @@ import 'package:home_kitchen/auth/ForgotScreen.dart';
 import 'package:home_kitchen/SplashScreen.dart';
 import 'package:home_kitchen/HomeScreen.dart';
 import 'package:home_kitchen/auth/VerifyScreen.dart';
+import 'package:home_kitchen/account/SettingScreen.dart';
+import 'package:home_kitchen/account/Subscriptions.dart';
+import 'package:home_kitchen/Pages/Contact.dart';
+import 'package:home_kitchen/Pages/TermsService.dart';
+import 'package:home_kitchen/Pages/favorites.dart';
+
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -65,6 +71,16 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => LanguagesWidget());
       case '/Splash':
         return MaterialPageRoute(builder: (_) => SplashScreen());
+      case '/Settings':
+        return MaterialPageRoute(builder: (_) => SettingScreen());
+      case '/Subscriptions':
+        return MaterialPageRoute(builder: (_) => SubscriptionsScreen());
+      case '/Prefrences':
+        return MaterialPageRoute(builder: (_) => FavoritesWidget());
+      case '/Contacts':
+        return MaterialPageRoute(builder: (_) => ContactScreen());
+      case '/Terms':
+        return MaterialPageRoute(builder: (_) => TermsService());
 //      case '/second':
 //      // Validation of correct data type
 //        if (args is String) {

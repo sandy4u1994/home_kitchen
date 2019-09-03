@@ -26,7 +26,7 @@ class DrawerWidget extends StatelessWidget {
               ),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Theme.of(context).accentColor,
-                backgroundImage: AssetImage('img/user2.jpg'),
+                backgroundImage: AssetImage('assets/img/user2.jpg'),
               ),
             ),
           ),
@@ -45,19 +45,6 @@ class DrawerWidget extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushNamed('/Pages', arguments: 0);
-            },
-            leading: Icon(
-              Icons.notifications,
-              color: Theme.of(context).focusColor.withOpacity(1),
-            ),
-            title: Text(
-              "Notifications",
-              style: Theme.of(context).textTheme.subhead,
-            ),
-          ),
-          ListTile(
-            onTap: () {
               Navigator.of(context).pushNamed('/Pages', arguments: 3);
             },
             leading: Icon(
@@ -71,14 +58,40 @@ class DrawerWidget extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushNamed('/Pages', arguments: 4);
+              Navigator.of(context).pushNamed('/Pages', arguments: 0);
             },
             leading: Icon(
-              Icons.favorite,
+              Icons.near_me,
               color: Theme.of(context).focusColor.withOpacity(1),
             ),
             title: Text(
-              "Favorite Foods",
+              "My Subscription",
+              style: Theme.of(context).textTheme.subhead,
+            ),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed('/Pages', arguments: 4);
+            },
+            leading: Icon(
+              Icons.sort,
+              color: Theme.of(context).focusColor.withOpacity(1),
+            ),
+            title: Text(
+              "My Prefrenences",
+              style: Theme.of(context).textTheme.subhead,
+            ),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed('/Pages', arguments: 4);
+            },
+            leading: Icon(
+              Icons.restaurant,
+              color: Theme.of(context).focusColor.withOpacity(1),
+            ),
+            title: Text(
+              "Be a Cook",
               style: Theme.of(context).textTheme.subhead,
             ),
           ),
@@ -107,7 +120,9 @@ class DrawerWidget extends StatelessWidget {
             ),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushNamed('/Settings');
+            },
             leading: Icon(
               Icons.settings,
               color: Theme.of(context).focusColor.withOpacity(1),
@@ -119,27 +134,27 @@ class DrawerWidget extends StatelessWidget {
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushNamed('/Languages');
+              Navigator.of(context).pushNamed('/Contacts');
             },
             leading: Icon(
-              Icons.translate,
+              Icons.call,
               color: Theme.of(context).focusColor.withOpacity(1),
             ),
             title: Text(
-              "Languages",
+              "Contact Us",
               style: Theme.of(context).textTheme.subhead,
             ),
           ),
           ListTile(
             onTap: () {
-              Navigator.of(context).pushNamed('/Login');
+              Navigator.of(context).pushNamed('/Terms');
             },
             leading: Icon(
-              Icons.exit_to_app,
+              Icons.insert_drive_file,
               color: Theme.of(context).focusColor.withOpacity(1),
             ),
             title: Text(
-              "Log out",
+              "Terms of Services",
               style: Theme.of(context).textTheme.subhead,
             ),
           ),

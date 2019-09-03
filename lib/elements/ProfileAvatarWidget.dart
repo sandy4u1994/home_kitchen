@@ -29,7 +29,7 @@ class ProfileAvatarWidget extends StatelessWidget {
               SizedBox(
                 width: 135,
                 height: 135,
-                child: CircleAvatar(backgroundImage: AssetImage('img/user1.jpg')),
+                child: CircleAvatar(backgroundImage: AssetImage('assets/img/user1.jpg')),
               ),
               SizedBox(
                 width: 50,
